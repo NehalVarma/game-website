@@ -13,6 +13,17 @@ export const AnimatedTitle = ({
 }: PropsWithChildren<AnimatedTitleProps>) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Safely derive a string from children when it's a primitive (string/number).
+  // Avoid stringifying objects (React elements) to prevent '[object Object]'.
+  let text = "";
+  if (typeof children === "string" || typeof children === "number") {
+    text = String(children);
+  } else if (Array.isArray(children)) {
+    text = children
+      .filter((c) => typeof c === "string" || typeof c === "number")
+      .join("");
+  }
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       const titleAnimation = gsap.timeline({
@@ -37,9 +48,7 @@ export const AnimatedTitle = ({
 
   return (
     <div ref={containerRef} className={cn("animated-title", containerClass)}>
-      {children
-        ?.toString()
-        .split("<br />")
+      {text.split("<br />")
         .map((line) => (
           <h1
             key={line}

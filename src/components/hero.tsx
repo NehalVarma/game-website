@@ -37,7 +37,11 @@ export const Hero = () => {
   };
 
   useEffect(() => {
-    if (loadedVideos === totalVideos - 1) setIsLoading(false);
+    if (loadedVideos === totalVideos - 1) {
+      const id = window.setTimeout(() => setIsLoading(false), 0);
+      return () => window.clearTimeout(id);
+    }
+    return;
   }, [loadedVideos]);
 
   useGSAP(

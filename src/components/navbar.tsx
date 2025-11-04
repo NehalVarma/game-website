@@ -31,18 +31,23 @@ export const Navbar = () => {
   }, [isAudioPlaying]);
 
   useEffect(() => {
-    if (currentScrollY === 0) {
-      setIsNavVisible(true);
-      navContainerRef.current?.classList.remove("floating-nav");
-    } else if (currentScrollY > lastScrollY) {
-      setIsNavVisible(false);
-      navContainerRef.current?.classList.add("floating-nav");
-    } else if (currentScrollY < lastScrollY) {
-      setIsNavVisible(true);
-      navContainerRef.current?.classList.add("floating-nav");
-    }
+    let raf = 0;
+    raf = requestAnimationFrame(() => {
+      if (currentScrollY === 0) {
+        setIsNavVisible(true);
+        navContainerRef.current?.classList.remove("floating-nav");
+      } else if (currentScrollY > lastScrollY) {
+        setIsNavVisible(false);
+        navContainerRef.current?.classList.add("floating-nav");
+      } else if (currentScrollY < lastScrollY) {
+        setIsNavVisible(true);
+        navContainerRef.current?.classList.add("floating-nav");
+      }
 
-    setLastScrollY(currentScrollY);
+      setLastScrollY(currentScrollY);
+    });
+
+    return () => cancelAnimationFrame(raf);
   }, [currentScrollY, lastScrollY]);
 
   useEffect(() => {

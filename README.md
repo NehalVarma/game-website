@@ -11,7 +11,6 @@
 [![Github commits](https://flat.badgen.net/github/commits/NehalVarma/game-website?icon=github&color=black&scale=1.01)](https://github.com/NehalVarma/game-website/commits "Github commits")
 [![GitHub issues](https://flat.badgen.net/github/issues/NehalVarma/game-website?icon=github&color=black&scale=1.01)](https://github.com/NehalVarma/game-website/issues "GitHub issues")
 [![GitHub pull requests](https://flat.badgen.net/github/prs/NehalVarma/game-website?icon=github&color=black&scale=1.01)](https://github.com/NehalVarma/game-website/pulls "GitHub pull requests")
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8e15a161-8615-4046-9869-4af8feb3c221/deploy-status)](https://nova-game.netlify.app/ "Netlify Status")
 
 <!-- Table of Contents -->
 <details>
@@ -113,7 +112,7 @@ game-website/
 
 ## :wrench: Stats
 
-[![Stats for Nova](/.github/images/stats.svg "Stats for Nova")](https://pagespeed.web.dev/analysis?url=https://nova-game.netlify.app/ "Stats for Nova")
+<!-- Performance stats will be available after deployment -->
 
 ## :raised_hands: Contribute
 
@@ -122,8 +121,6 @@ You might encounter some bugs while using this app. You are more than welcome to
 ## :gem: Acknowledgements
 
 Useful resources and dependencies that are used in Nova.
-
-- The design and animations of this project were inspired by the Zentry.com website, which is an award-winning website recognized on [Awwwards.com](https://awwwards.com "Awwwards.com").
 - [@gsap/react](https://www.npmjs.com/package/@gsap/react): ^2.1.1
 - [gsap](https://www.npmjs.com/package/gsap): ^3.12.5
 - [react](https://www.npmjs.com/package/react): ^18.3.1
